@@ -32,4 +32,8 @@ class EmployeBLL{
     }
 
 }
+
+
+Employe business
+employe data exec
 ?>
