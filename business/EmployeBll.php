@@ -30,6 +30,16 @@ class EmployeBLL{
        $EditData = $this->employeDA->Edit($id);
        return $EditData;  
     }
+    public function UpdateEmploye($id,$nom,$prenom,$date_de_naissance){
+       
+       $EditData = $this->employeDA->Update($id,$nom,$prenom,$date_de_naissance);
+       return $EditData;  
+    }
+    public function DeleteEmploye($id){
+       
+       $EditData = $this->employeDA->Delete($id);
+       return $EditData;  
+    }
 
 }
 

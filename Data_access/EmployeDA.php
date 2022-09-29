@@ -38,7 +38,7 @@ class EmployeDA{
 
 // pour afficher dans input
     public function Edit($id){
-        $SelectRowId = "SELECT * FROM personnes WHERE id= 1";
+        $SelectRowId = "SELECT * FROM personnes WHERE id=$id";
         $result = mysqli_query(getConnection(),  $SelectRowId);
         // Récupère une ligne de résultat sous forme de tableau associatif
         $employe_data = mysqli_fetch_assoc($result);
@@ -51,20 +51,20 @@ class EmployeDA{
         return $employe;
     }
 
-    // public function Supprimer($id){
-    //     $RowDelet = "DELETE FROM personnes WHERE id= '$id'";
-    //     mysqli_query(getConnection(), $RowDelet);
-    // }
+    public function Delete($id){
+        $RowDelet = "DELETE FROM personnes WHERE id= $id";
+        mysqli_query(getConnection(), $RowDelet);
+    }
 
-    // public function Modifier($id,$nom,$prenom,$date_de_naissance){
-    //     // Requête SQL
-    //     $RowUpdate = "UPDATE personnes SET 
-    //     Nom='$nom', Prenom='$prenom', Date_de_naissance='$date_de_naissance'
-    //     WHERE id=$id";
+    public function Update($id,$nom,$prenom,$date_de_naissance){
+        // Requête SQL
+        $RowUpdate = "UPDATE personnes SET 
+        Nom='$nom', Prenom='$prenom', Date_de_naissance='$date_de_naissance'
+        WHERE id=$id";
 
-    //     mysqli_query(getConnection(),$RowUpdate);
+        mysqli_query(getConnection(),$RowUpdate);
 
-    // }
+    }
 
 }
 ?>

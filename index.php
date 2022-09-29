@@ -35,8 +35,8 @@
                 <td><?= $value->getPrenom() ?></td>
                 <td><?= $value->getDate_de_naissance() ?></td>
                 <td>
-                    <a href="Editer.php?id=<?php echo $value->getId() ?>">Éditer</a>
-                    <a href="Supprimer.php?id=<?php echo $value->getId() ?>">Supprime</a>
+                    <a href="Edit.php?id=<?php echo $value->getId() ?>">Éditer</a>
+                    <a href="Delete.php?id=<?php echo $value->getId() ?>">Supprime</a>
                 </td>
             </tr>
             <?php }?>
