@@ -1,6 +1,6 @@
 <?php
     // include "database/GestionEmployes.php";
-    include ("business/EmployeManager.php");
+    include ("business/EmployeBll.php");
     // Trouver tous les employés depuis la base de données 
     $gestionEmployes = new EmployeFunction();
     $data = $gestionEmployes->GetAllEmployes();

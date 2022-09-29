@@ -13,11 +13,11 @@ class EmployeFunction{
 
     public function GetAllEmployes(){
        
-        return $this->gestionEmploye->afficher();
+        return $this->gestionEmploye->GetEmloyes();
     }
     public function AddEmploye($employe){
        
-        return $this->gestionEmploye->Ajouter($employe);
+        return $this->gestionEmploye->AddEmploye($employe);
     }
     // public function EditEmploye($id){
        

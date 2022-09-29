@@ -1,11 +1,11 @@
-<?php
+ <?php
  include 'Employe.php';
  include 'Connection.php';
 class GestionEmployes{
 
 
     
-    public function Ajouter($employe){
+    public function AddEmploye($employe){
 
         $nom = $employe->getNom();
         $prenom = $employe->getPrenom();
@@ -19,7 +19,7 @@ class GestionEmployes{
 
     
 
-    public function afficher(){
+    public function GetEmloyes(){
         $SelctRow = 'SELECT id, Nom, Prenom, Date_de_naissance FROM personnes';
         $query = mysqli_query(getConnection() ,$SelctRow);
         $employes_data = mysqli_fetch_all($query, MYSQLI_ASSOC);
@@ -51,20 +51,20 @@ class GestionEmployes{
         return $employe;
     }
 
-    public function Supprimer($id){
-        $RowDelet = "DELETE FROM personnes WHERE id= '$id'";
-        mysqli_query(getConnection(), $RowDelet);
-    }
+    // public function Supprimer($id){
+    //     $RowDelet = "DELETE FROM personnes WHERE id= '$id'";
+    //     mysqli_query(getConnection(), $RowDelet);
+    // }
 
-    public function Modifier($id,$nom,$prenom,$date_de_naissance){
-        // Requête SQL
-        $RowUpdate = "UPDATE personnes SET 
-        Nom='$nom', Prenom='$prenom', Date_de_naissance='$date_de_naissance'
-        WHERE id=$id";
+    // public function Modifier($id,$nom,$prenom,$date_de_naissance){
+    //     // Requête SQL
+    //     $RowUpdate = "UPDATE personnes SET 
+    //     Nom='$nom', Prenom='$prenom', Date_de_naissance='$date_de_naissance'
+    //     WHERE id=$id";
 
-        mysqli_query($this->getConnection(),$RowUpdate);
+    //     mysqli_query(getConnection(),$RowUpdate);
 
-    }
+    // }
 
 }
 ?>
