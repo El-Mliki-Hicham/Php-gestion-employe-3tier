@@ -1,28 +1,35 @@
 <?php
 
 
-include("database/GestionEmployes.php");
-class EmployeFunction{
+include("Data_access/EmployeDA.php");
+class EmployeBLL{
     private $gestionEmploye = null;
 
+  
 
     public function __construct(){
-        $this->gestionEmploye = new GestionEmployes();
+        $this->employeDA = new EmployeDA();
+
+        // if(isset($_POST['id'])){
+        //     $this->EditEmploye($_POST["id"]);
+        // }
+      
     } 
     
 
     public function GetAllEmployes(){
        
-        return $this->gestionEmploye->GetEmloyes();
+        return $this->employeDA->GetEmployes();
     }
     public function AddEmploye($employe){
        
-        return $this->gestionEmploye->AddEmploye($employe);
+        return $this->employeDA->AddEmploye($employe);
     }
-    // public function EditEmploye($id){
+    public function EditEmploye($id){
        
-    //     return $gestionEmploye->RechercherParId($id);
-    // }
+       $EditData = $this->employeDA->Edit($id);
+       return $EditData;  
+    }
 
 }
 ?>

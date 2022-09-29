@@ -1,7 +1,7 @@
  <?php
  include 'Employe.php';
  include 'Connection.php';
-class GestionEmployes{
+class EmployeDA{
 
 
     
@@ -19,7 +19,7 @@ class GestionEmployes{
 
     
 
-    public function GetEmloyes(){
+    public function GetEmployes(){
         $SelctRow = 'SELECT id, Nom, Prenom, Date_de_naissance FROM personnes';
         $query = mysqli_query(getConnection() ,$SelctRow);
         $employes_data = mysqli_fetch_all($query, MYSQLI_ASSOC);
@@ -37,8 +37,8 @@ class GestionEmployes{
     }
 
 // pour afficher dans input
-    public function RechercherParId($id){
-        $SelectRowId = "SELECT * FROM personnes WHERE id= $id";
+    public function Edit($id){
+        $SelectRowId = "SELECT * FROM personnes WHERE id= 1";
         $result = mysqli_query(getConnection(),  $SelectRowId);
         // Récupère une ligne de résultat sous forme de tableau associatif
         $employe_data = mysqli_fetch_assoc($result);

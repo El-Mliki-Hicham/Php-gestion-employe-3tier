@@ -1,9 +1,9 @@
 <?php
     // include "database/GestionEmployes.php";
-    include ("business/EmployeBll.php");
+    include ("Business/EmployeBLL.php");
     // Trouver tous les employés depuis la base de données 
-    $gestionEmployes = new EmployeFunction();
-    $data = $gestionEmployes->GetAllEmployes();
+    $employeBLL = new EmployeBLL();
+    $data = $employeBLL->GetAllEmployes();
 ?>
 
 
@@ -18,7 +18,7 @@
 </head>
 <body>
     <div>
-        <a href="ajouter.php">Ajouter un employé</a>
+        <a href="Ajouter.php">Ajouter un employé</a>
         <table>
             <tr>
                 <th>Nom</th>
@@ -35,8 +35,8 @@
                 <td><?= $value->getPrenom() ?></td>
                 <td><?= $value->getDate_de_naissance() ?></td>
                 <td>
-                    <a href="editer.php?id=<?php echo $value->getId() ?>">Éditer</a>
-                    <a href="supprimer.php?id=<?php echo $value->getId() ?>">Supprime</a>
+                    <a href="Editer.php?id=<?php echo $value->getId() ?>">Éditer</a>
+                    <a href="Supprimer.php?id=<?php echo $value->getId() ?>">Supprime</a>
                 </td>
             </tr>
             <?php }?>
