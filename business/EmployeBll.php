@@ -3,7 +3,7 @@
 
 include("Data_access/EmployeDA.php");
 class EmployeBLL{
-    private $gestionEmploye = null;
+    private $employeDA= null;
 
   
 
@@ -34,6 +34,5 @@ class EmployeBLL{
 }
 
 
-Employe business
-employe data exec
+
 ?>
